@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../model/expense.dart';
+import '../models/expense.dart';
 
 final formatter = DateFormat.yMd();
 
