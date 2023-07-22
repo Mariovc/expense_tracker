@@ -1,7 +1,6 @@
 import 'package:uuid/uuid.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:collection/collection.dart';
 
 const uuid = Uuid();
 final formatter = DateFormat.yMd();
@@ -54,6 +53,9 @@ class ExpenseBucket {
   final List<Expense> expenses;
 
   double get totalExpenses {
-    return expenses.map((e) => e.amount).sum;
+    return expenses.fold(
+      0,
+      (previousValue, expense) => previousValue + expense.amount,
+    );
   }
 }
